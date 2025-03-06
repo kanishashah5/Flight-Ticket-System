@@ -1,45 +1,26 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-03-03 17:50:04.669076",
+ "autoname": "prompt",
+ "creation": "2025-03-05 18:31:09.593369",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "model",
-  "airline",
-  "capacity"
+  "description"
  ],
  "fields": [
   {
-   "fieldname": "model",
+   "fieldname": "description",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Model",
-   "reqd": 1
-  },
-  {
-   "fieldname": "airline",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Airline",
-   "options": "Airline",
-   "reqd": 1
-  },
-  {
-   "fieldname": "capacity",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Capacity",
-   "non_negative": 1,
-   "reqd": 1
+   "label": "Description"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-05 12:23:22.214948",
+ "modified": "2025-03-05 18:33:06.577862",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
- "name": "Airplane",
+ "name": "Airplane Ticket Add-on Type",
  "naming_rule": "Set by user",
  "owner": "Administrator",
  "permissions": [

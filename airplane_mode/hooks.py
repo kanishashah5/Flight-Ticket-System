@@ -145,6 +145,13 @@ app_license = "mit"
 # 	}
 # }
 
+doc_events = {
+	"Flight Passenger": {
+        "before_save":"airplane_mode.airplane_mode.python.flight_passenger.before_save"
+	}
+}
+
+
 # Scheduled Tasks
 # ---------------
 
