@@ -145,10 +145,22 @@ app_license = "mit"
 # 	}
 # }
 
+
 doc_events = {
 	"Flight Passenger": {
         "before_save":"airplane_mode.airplane_mode.python.flight_passenger.before_save"
-	}
+	},
+    
+   "Airplane Ticket": {
+        "before_save": "airplane_mode.airplane_mode.python.airplane_ticket.before_save",
+        "validate": "airplane_mode.airplane_mode.python.airplane_ticket.validate",
+        "on_submit": "airplane_mode.airplane_mode.python.airplane_ticket.prevent_submission"
+    },
+    "Airplane Flight": {
+        "on_submit":"airplane_mode.airplane_mode.python.airplane_flight.set_status_completed"
+	},
+
+
 }
 
 
