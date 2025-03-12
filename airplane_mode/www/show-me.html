@@ -1,0 +1,11 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+    {% set color = frappe.form_dict.get('color', 'black') %}
+
+    <div style="width: 200px; height: 100px; 
+                margin: 50px auto; border: 2px solid #000;">
+    </div>
+
+    <p style="text-align: center;">Showing color: <strong>{{ color }}</strong></p>
+{% endblock %}

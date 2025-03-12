@@ -25,16 +25,18 @@ def get_existing_seats():
     return {s["seat"] for s in seats if s["seat"]}
 
 
-def validate(doc, method=None):
-    unique_addons = {}
 
+def validate(doc, method=None):
+
+    unique_addons = {}
     filtered_addons = []
-    for addon in doc.get not in unique_addons:
+    for addon in doc.get("add_ons", []):
+        if addon.item not in unique_addons:
             unique_addons[addon.item] = addon
             filtered_addons.append(addon)
 
-   
     doc.set("add_ons", filtered_addons)
+
 
 def prevent_submission(doc, method):
     if doc.status != "Boarded":
