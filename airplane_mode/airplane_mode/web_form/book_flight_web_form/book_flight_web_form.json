@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2025-03-12 16:22:38.727092",
+ "modified": "2025-03-12 18:27:45.243815",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "book-flight-web-form",
@@ -62,6 +62,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
+   "default": "25000",
    "fieldname": "flight_price",
    "fieldtype": "Currency",
    "hidden": 0,
