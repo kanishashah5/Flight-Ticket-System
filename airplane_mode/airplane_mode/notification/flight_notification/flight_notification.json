@@ -14,14 +14,14 @@
  "is_standard": 1,
  "message": "<p>Add your message here</p>\n",
  "message_type": "Markdown",
- "modified": "2025-03-12 13:19:44.376364",
+ "modified": "2025-03-13 18:21:46.996766",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Flight Notification",
  "owner": "Administrator",
  "recipients": [
   {
-   "receiver_by_document_field": "owner",
+   "receiver_by_document_field": "",
    "receiver_by_role": "System Manager"
   }
  ],

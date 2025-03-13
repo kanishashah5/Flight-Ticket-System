@@ -21,10 +21,13 @@
   "duration",
   "column_break_ojhp",
   "time_of_departure",
-  "amended_from",
+  "gate_no",
   "section_break_zrwo",
   "route",
-  "is_published"
+  "is_published",
+  "section_break_lqoj",
+  "flight_crew",
+  "amended_from"
  ],
  "fields": [
   {
@@ -110,16 +113,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Airplane Flight",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
@@ -133,6 +126,32 @@
   {
    "fieldname": "section_break_zrwo",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_lqoj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "flight_crew",
+   "fieldtype": "Table",
+   "label": "Flight Crew",
+   "options": "Flight Crew"
+  },
+  {
+   "fieldname": "gate_no",
+   "fieldtype": "Data",
+   "label": "Gate No.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Flight",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "has_web_view": 1,
@@ -145,7 +164,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-03-12 11:29:49.606092",
+ "modified": "2025-03-13 18:37:32.597868",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -163,6 +182,48 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Travel Agent",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Flight Crew Member",
+   "share": 1
   }
  ],
  "route": "flights",

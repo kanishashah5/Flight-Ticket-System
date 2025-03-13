@@ -27,6 +27,7 @@
   "departure_time",
   "column_break_rcev",
   "duration_of_flight",
+  "gate_no",
   "amended_from"
  ],
  "fields": [
@@ -155,6 +156,14 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "flight.gate_no",
+   "fieldname": "gate_no",
+   "fieldtype": "Data",
+   "label": "Gate No.",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -168,7 +177,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-07 12:16:48.173052",
+ "modified": "2025-03-13 18:38:41.108021",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
@@ -186,6 +195,41 @@
    "role": "System Manager",
    "share": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Travel Agent",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Flight Crew Member",
+   "share": 1,
    "write": 1
   }
  ],
