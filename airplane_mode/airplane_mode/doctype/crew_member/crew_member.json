@@ -1,38 +1,74 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
- "creation": "2025-03-13 17:19:18.893761",
+ "autoname": "format:{airline}-{employee_id}",
+ "creation": "2025-03-17 10:27:04.883770",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
-  "role"
+  "first_name",
+  "last_name",
+  "full_name",
+  "airline",
+  "employee_id",
+  "role",
+  "contact_no"
  ],
  "fields": [
   {
-   "fieldname": "name1",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full Name",
-   "reqd": 1,
-   "unique": 1
+   "read_only": 1
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "label": "Airline",
+   "options": "Airline",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Data",
+   "label": "Employee ID",
+   "reqd": 1
   },
   {
    "fieldname": "role",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Role",
-   "options": "Pilot\nCo-Pilot\nFlight Attendant\nEngineer\nOther",
+   "options": "Pilot\nCo-Pilot\nFlight Attendant\nEngineer",
    "reqd": 1
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Phone",
+   "label": "Contact No."
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-13 17:39:45.434947",
+ "modified": "2025-03-17 11:20:58.680722",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Crew Member",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

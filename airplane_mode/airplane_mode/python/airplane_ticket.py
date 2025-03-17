@@ -72,3 +72,4 @@ def prevent_submission(doc, method):
     if doc.status != "Boarded":
         frappe.throw("You cannot submit this ticket because the passenger has not boarded yet!")
 
+

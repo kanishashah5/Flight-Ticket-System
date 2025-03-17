@@ -139,8 +139,9 @@
   },
   {
    "fieldname": "gate_no",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "label": "Gate No.",
+   "options": "G1\nG2\nG3\nG4\nG5",
    "reqd": 1
   },
   {
@@ -164,7 +165,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-03-13 18:37:32.597868",
+ "modified": "2025-03-17 10:53:33.217524",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",

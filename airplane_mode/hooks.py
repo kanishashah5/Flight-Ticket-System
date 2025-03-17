@@ -157,9 +157,24 @@ doc_events = {
         "on_submit": "airplane_mode.airplane_mode.python.airplane_ticket.prevent_submission"
     },
     "Airplane Flight": {
-        "on_submit":"airplane_mode.airplane_mode.python.airplane_flight.set_status_completed"
-	},
+        "on_submit":"airplane_mode.airplane_mode.python.airplane_flight.set_status_completed",
+        "on_update": "airplane_mode.airplane_mode.python.airplane_flight.update_flight_tickets_gate"
 
+	},
+    "Crew Member": {
+        "before_save":"airplane_mode.airplane_mode.python.crew_member.before_save"
+	},
+    
+    "Shop": {
+        "before_insert": "airplane_mode.airport_shop_management.python.shop.set_default_rent_amount",
+        "before_save": "airplane_mode.airport_shop_management.python.shop.validate_contract_duration",
+
+    },
+        "Airport Shop Rent": {
+        "before_insert": "airplane_mode.airport_shop_management.python.shop_rent.check_shop_status",
+        "before_submit": "airplane_mode.airport_shop_management.python.shop_rent.before_submit",
+        "before_save": "airplane_mode.airport_shop_management.python.shop_rent.check_payment_date",
+    }
 
 }
 
@@ -167,23 +182,12 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"airplane_mode.tasks.all"
-# 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"airplane_mode.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"airplane_mode.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"airplane_mode.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    "monthly": [
+        "airplane_mode.airport_shop_management.python.shop_rent.send_rent_reminder"
+    ]
+}
+
 
 # Testing
 # -------
