@@ -1,0 +1,43 @@
+<!-- {% extends "templates/web.html" %} -->
+{%- block head_include %}
+<link rel="stylesheet" href="/assets/flight_ticket_system/css/custom.css">
+{% endblock -%}
+{% block page_content %}
+<div class="container mt-4">
+    <div class="card shadow-sm p-4">
+        <h2 class="text-center mb-4">{{ shop_name }}</h2>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Shop Number:</strong> {{ shop_number }}</p>
+                    <p><strong>Airport:</strong> {{ airport }}</p>
+                    <p><strong>Tenant Name:</strong> {{ tenant_name }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Contract Start Date:</strong> {{ frappe.format(contract_start_date, {'fieldtype': 'Date'}) }}</p>
+                    <p><strong>Contract End Date:</strong> {{ frappe.format(contract_end_date, {'fieldtype': 'Date'}) }}</p>
+                    <p><strong>Rent Amount:</strong> {{ frappe.format(rent_amount, {'fieldtype': 'Currency'}) }}</p>
+                </div>
+            </div>
+
+            <p><strong>Status:</strong> 
+                <span class="badge px-3 py-2 text-white
+                    {% if doc.status == 'On Lease' %} bg-success 
+                    {% elif doc.status == 'Available For Lease' %} bg-primary 
+                    {% elif doc.status == 'Closed' %} bg-danger 
+                    {% else %} bg-secondary {% endif %}">
+                    {{ doc.status }}
+                </span>
+            </p>
+
+            <div class="text-center mt-4">
+                <a href="http://127.0.0.1:8002/shop-leads-web-form/new?shop={{ doc.name | urlencode }}" class="btn btn-warning px-4 py-2" 
+                    style="font-size: 1.1rem; color: black;">
+                    I'm Interested
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

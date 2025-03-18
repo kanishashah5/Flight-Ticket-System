@@ -1,6 +1,13 @@
 import frappe
 from frappe.utils import getdate, add_months, today
 
+
+def before_save(doc, method):
+
+    check_payment_date(doc, method)
+
+    doc.name = f"{doc.shop}-{doc.from_date}-{doc.to_date}"
+
 def before_submit(doc, method):
     check_status_before_submit(doc)
 
@@ -10,6 +17,10 @@ def check_shop_status(doc,method):
         frappe.throw("""The "Airport Shop" is not On Lease!""")
 
 def check_payment_date(doc,method):
+
+    if doc.status == "Pending":
+        doc.paid_amount = 0  
+
     shop = doc.shop
     contract_start_date = frappe.db.get_value("Shop", shop, "contract_start_date")
     contract_end_date = frappe.db.get_value("Shop", shop, "contract_end_date")

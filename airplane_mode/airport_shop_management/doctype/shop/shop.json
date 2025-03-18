@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format:{shop_name}-{airport}-SHOPNO-{shop_number}",
  "creation": "2025-03-17 11:31:57.525352",
@@ -12,6 +13,7 @@
   "column_break_wokq",
   "shop_number",
   "status",
+  "shop_type",
   "section_break_snwr",
   "tenant",
   "tenant_name",
@@ -21,7 +23,10 @@
   "contract_start_date",
   "rent_amount",
   "column_break_plss",
-  "contract_end_date"
+  "contract_end_date",
+  "section_break_llii",
+  "route",
+  "is_published"
  ],
  "fields": [
   {
@@ -118,11 +123,34 @@
    "fieldtype": "Data",
    "label": "Tenant Email",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_llii",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published?"
+  },
+  {
+   "fieldname": "shop_type",
+   "fieldtype": "Link",
+   "label": "Shop Type",
+   "options": "Shop Type"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "links": [],
- "modified": "2025-03-17 18:31:08.363194",
+ "modified": "2025-03-18 15:25:28.432243",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",
@@ -142,6 +170,7 @@
    "write": 1
   }
  ],
+ "route": "shops",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

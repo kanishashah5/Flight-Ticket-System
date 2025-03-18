@@ -173,7 +173,7 @@ doc_events = {
         "Airport Shop Rent": {
         "before_insert": "airplane_mode.airport_shop_management.python.shop_rent.check_shop_status",
         "before_submit": "airplane_mode.airport_shop_management.python.shop_rent.before_submit",
-        "before_save": "airplane_mode.airport_shop_management.python.shop_rent.check_payment_date",
+        "before_save": "airplane_mode.airport_shop_management.python.shop_rent.before_save",
     }
 
 }
@@ -187,6 +187,13 @@ scheduler_events = {
         "airplane_mode.airport_shop_management.python.shop_rent.send_rent_reminder"
     ]
 }
+
+fixtures = [
+    {
+        "doctype": "Shop Type",
+        "filters": [["shop_type", "in", ["Stall", "Walk-through", "Normal"]]]
+    }
+]
 
 
 # Testing
